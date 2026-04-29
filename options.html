@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>X Comment Generator 2.0 Options</title>
+  <style>
+    :root{color-scheme:dark;--bg:#030712;--card:rgba(15,23,42,.72);--soft:rgba(15,23,42,.52);--line:rgba(148,163,184,.20);--text:#eef6ff;--muted:#94a3b8;--blue:#1d9bf0;--violet:#8b5cf6;--pink:#ec4899;--green:#22c55e;--amber:#f59e0b}
+    *{box-sizing:border-box} body{margin:0;min-height:100vh;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:radial-gradient(circle at 10% -5%,rgba(29,155,240,.30),transparent 34%),radial-gradient(circle at 92% 4%,rgba(236,72,153,.22),transparent 32%),radial-gradient(circle at 50% 105%,rgba(139,92,246,.28),transparent 40%),linear-gradient(180deg,#07111f,#030712 60%);color:var(--text)}
+    .wrap{max-width:1080px;margin:0 auto;padding:34px 22px 54px}.hero{display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center;margin-bottom:20px}.brand{display:flex;align-items:center;gap:16px}.logo{width:62px;height:62px;border-radius:22px;background:linear-gradient(135deg,var(--blue),var(--violet),var(--pink));display:grid;place-items:center;font-weight:950;font-size:26px;box-shadow:0 20px 60px rgba(29,155,240,.24),inset 0 1px 0 rgba(255,255,255,.28)}h1{margin:0;font-size:34px;letter-spacing:-.055em;line-height:1.02}.sub{margin-top:7px;color:#b6c4d7}.sub a{color:#7dd3fc;text-decoration:none;font-weight:800}.pill{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(34,197,94,.26);background:rgba(34,197,94,.09);color:#bbf7d0;border-radius:999px;padding:9px 12px;font-size:12px;font-weight:900}.dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 14px var(--green)}.grid{display:grid;grid-template-columns:1.1fr .9fr;gap:18px}.card{position:relative;overflow:hidden;border:1px solid var(--line);background:linear-gradient(180deg,rgba(15,23,42,.78),rgba(2,6,23,.70));border-radius:28px;padding:22px;box-shadow:0 24px 80px rgba(0,0,0,.28);backdrop-filter:blur(18px)}.card:before{content:"";position:absolute;inset:0;background:linear-gradient(120deg,transparent,rgba(255,255,255,.04),transparent);pointer-events:none}.card>*{position:relative}h2{display:flex;align-items:center;gap:9px;margin:0 0 16px;font-size:18px;letter-spacing:-.02em}.icon{width:28px;height:28px;border-radius:10px;display:grid;place-items:center;background:rgba(29,155,240,.13);border:1px solid rgba(29,155,240,.20)}label{display:block;font-size:13px;font-weight:900;margin:15px 0 8px;color:#dbeafe}.help{font-size:12px;color:var(--muted);line-height:1.45;margin-top:6px}input,select{width:100%;border:1px solid rgba(148,163,184,.26);border-radius:16px;padding:13px 14px;background:rgba(2,6,23,.58);color:var(--text);outline:none;font-size:14px;transition:border-color .16s ease,box-shadow .16s ease,background .16s ease}input:focus,select:focus{border-color:rgba(56,189,248,.80);box-shadow:0 0 0 4px rgba(56,189,248,.12);background:rgba(15,23,42,.82)}.row{display:grid;grid-template-columns:1fr 1fr;gap:14px}.usageBox{padding:16px;border-radius:22px;background:rgba(2,6,23,.48);border:1px solid rgba(148,163,184,.16)}.usageHead{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:12px}.usageBig{font-size:28px;font-weight:950;letter-spacing:-.05em}.muted{color:var(--muted);font-size:13px}.bar{height:13px;border-radius:999px;background:rgba(148,163,184,.16);border:1px solid rgba(148,163,184,.12);overflow:hidden}.bar span{display:block;width:0;height:100%;border-radius:999px;background:linear-gradient(90deg,var(--blue),var(--violet),var(--pink));box-shadow:0 0 18px rgba(29,155,240,.30)}.miniGrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}.mini{padding:12px;border-radius:18px;background:rgba(15,23,42,.52);border:1px solid rgba(148,163,184,.15)}.mini b{display:block;font-size:13px}.mini span{display:block;margin-top:3px;color:var(--muted);font-size:12px}.btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}button{border:0;border-radius:999px;padding:12px 17px;font-weight:950;cursor:pointer;color:#fff;background:linear-gradient(135deg,var(--blue),var(--violet));box-shadow:0 16px 34px rgba(29,155,240,.18);transition:transform .16s ease,filter .16s ease,box-shadow .16s ease}button:hover{transform:translateY(-1px);filter:brightness(1.08);box-shadow:0 18px 40px rgba(139,92,246,.24)}button:active{transform:translateY(0) scale(.98)}button.secondary{background:rgba(148,163,184,.13);color:#dbeafe;border:1px solid rgba(148,163,184,.22);box-shadow:none}.status{margin-top:14px;color:#86efac;font-weight:900;min-height:22px}.callout{margin-top:14px;border:1px solid rgba(245,158,11,.22);background:rgba(245,158,11,.08);color:#fde68a;border-radius:20px;padding:14px;font-size:13px;line-height:1.55}.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.chip{font-size:12px;font-weight:800;color:#cbd5e1;border:1px solid rgba(148,163,184,.17);background:rgba(15,23,42,.42);border-radius:999px;padding:7px 10px}@media(max-width:860px){.hero{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.row{grid-template-columns:1fr}h1{font-size:28px}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+      <div class="brand">
+        <div class="logo">X</div>
+        <div>
+          <h1>X Comment Generator 2.0</h1>
+          <div class="sub">A product of Unique Labs · by Shahriar Ahmed · <a href="https://x.com/0x_nation" target="_blank">Website</a></div>
+        </div>
+      </div>
+      <div class="pill"><span class="dot"></span>Draft-only, never auto-posts</div>
+    </header>
+
+    <main class="grid">
+      <section class="card">
+        <h2><span class="icon">⚙️</span>Generator Settings</h2>
+        <label for="apiKey">OpenAI API Key</label>
+        <input id="apiKey" type="password" placeholder="sk-..." autocomplete="off" />
+        <div class="help">Stored locally in Chrome extension storage.</div>
+
+        <div class="row">
+          <div>
+            <label for="modelPreset">Model Selection</label>
+            <select id="modelPreset">
+              <option value="gpt-4o">gpt-4o — default</option>
+              <option value="gpt-4o-mini">gpt-4o-mini — cheaper</option>
+              <option value="gpt-4.1-mini">gpt-4.1-mini</option>
+              <option value="gpt-4.1">gpt-4.1</option>
+              <option value="custom">Custom model name</option>
+            </select>
+          </div>
+          <div>
+            <label for="model">Custom / Active Model</label>
+            <input id="model" type="text" placeholder="gpt-4o" />
+          </div>
+        </div>
+
+        <div class="row">
+          <div>
+            <label for="temperature">Temperature</label>
+            <input id="temperature" type="number" step="0.01" min="0" max="1.5" placeholder="1.18" />
+          </div>
+          <div>
+            <label for="maxTokens">Max Tokens</label>
+            <input id="maxTokens" type="number" min="40" max="240" placeholder="135" />
+          </div>
+        </div>
+
+        <h2 style="margin-top:24px"><span class="icon">🛡️</span>API Safety Controls</h2>
+        <div class="row">
+          <div>
+            <label for="dailyLimit">Daily API Request Limit</label>
+            <input id="dailyLimit" type="number" min="1" max="1000" placeholder="60" />
+          </div>
+          <div>
+            <label for="cooldownSeconds">Cooldown Between Requests</label>
+            <input id="cooldownSeconds" type="number" min="0" max="120" placeholder="5" />
+          </div>
+        </div>
+
+        <div class="btns">
+          <button id="save">Save Settings</button>
+          <button id="clear" class="secondary">Clear Reply Memory</button>
+          <button id="resetUsage" class="secondary">Reset Today’s Counter</button>
+        </div>
+        <div id="status" class="status"></div>
+      </section>
+
+      <aside class="card">
+        <h2><span class="icon">📊</span>Today’s Usage</h2>
+        <div class="usageBox">
+          <div class="usageHead">
+            <div>
+              <div class="muted">API requests</div>
+              <div class="usageBig" id="usageBig">0/60</div>
+            </div>
+            <div class="muted" id="usageDate">Today</div>
+          </div>
+          <div class="bar"><span id="usageBar"></span></div>
+          <div class="miniGrid">
+            <div class="mini"><b id="leftCount">60 left</b><span>Remaining limit</span></div>
+            <div class="mini"><b id="activeModel">gpt-4o</b><span>Active model</span></div>
+            <div class="mini"><b id="cooldownView">5s</b><span>Cooldown</span></div>
+            <div class="mini"><b id="keyView">Not set</b><span>API key</span></div>
+          </div>
+        </div>
+        <div class="callout">Tip: keep the daily limit low while testing. The extension may retry once to avoid repetitive or weak replies, so one click can occasionally use two requests.</div>
+        <div class="chips">
+          <span class="chip">Human-style replies</span><span class="chip">Question mode</span><span class="chip">X tab memory clear</span><span class="chip">Clipboard fallback</span>
+        </div>
+        <div class="help" style="margin-top:18px">Usage: open X, press <b>AI Reply</b> or <b>Question</b>. It inserts a draft only. Review before posting.</div>
+      </aside>
+    </main>
+  </div>
+
+  <script src="options.js"></script>
+</body>
+</html>
