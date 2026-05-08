@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
   "name": "X Comment Generator 2.0",
-  "version": "2.2.6",
-  "description": "Fixed visual bugs and React sync issues. Human-style AI reply draft generator for X.",
+  "version": "2.6.0",
+  "description": "Adds clipboard / insert output mode toggle. Fixes double-paste duplication and gibberish drift. Human-style AI reply draft generator for X.",
   "author": "Shahriar Ahmed",
   "homepage_url": "https://x.com/0x_nation",
   "permissions": [
