@@ -3,104 +3,803 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>X Comment Generator 2.0 Options</title>
+  <title>X Comment Generator · Settings</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
-    :root{color-scheme:dark;--bg:#030712;--card:rgba(15,23,42,.72);--soft:rgba(15,23,42,.52);--line:rgba(148,163,184,.20);--text:#eef6ff;--muted:#94a3b8;--blue:#1d9bf0;--violet:#8b5cf6;--pink:#ec4899;--green:#22c55e;--amber:#f59e0b}
-    *{box-sizing:border-box} body{margin:0;min-height:100vh;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:radial-gradient(circle at 10% -5%,rgba(29,155,240,.30),transparent 34%),radial-gradient(circle at 92% 4%,rgba(236,72,153,.22),transparent 32%),radial-gradient(circle at 50% 105%,rgba(139,92,246,.28),transparent 40%),linear-gradient(180deg,#07111f,#030712 60%);color:var(--text)}
-    .wrap{max-width:1080px;margin:0 auto;padding:34px 22px 54px}.hero{display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center;margin-bottom:20px}.brand{display:flex;align-items:center;gap:16px}.logo{width:62px;height:62px;border-radius:22px;background:linear-gradient(135deg,var(--blue),var(--violet),var(--pink));display:grid;place-items:center;font-weight:950;font-size:26px;box-shadow:0 20px 60px rgba(29,155,240,.24),inset 0 1px 0 rgba(255,255,255,.28)}h1{margin:0;font-size:34px;letter-spacing:-.055em;line-height:1.02}.sub{margin-top:7px;color:#b6c4d7}.sub a{color:#7dd3fc;text-decoration:none;font-weight:800}.pill{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(34,197,94,.26);background:rgba(34,197,94,.09);color:#bbf7d0;border-radius:999px;padding:9px 12px;font-size:12px;font-weight:900}.dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 14px var(--green)}.grid{display:grid;grid-template-columns:1.1fr .9fr;gap:18px}.card{position:relative;overflow:hidden;border:1px solid var(--line);background:linear-gradient(180deg,rgba(15,23,42,.78),rgba(2,6,23,.70));border-radius:28px;padding:22px;box-shadow:0 24px 80px rgba(0,0,0,.28);backdrop-filter:blur(18px)}.card:before{content:"";position:absolute;inset:0;background:linear-gradient(120deg,transparent,rgba(255,255,255,.04),transparent);pointer-events:none}.card>*{position:relative}h2{display:flex;align-items:center;gap:9px;margin:0 0 16px;font-size:18px;letter-spacing:-.02em}.icon{width:28px;height:28px;border-radius:10px;display:grid;place-items:center;background:rgba(29,155,240,.13);border:1px solid rgba(29,155,240,.20)}label{display:block;font-size:13px;font-weight:900;margin:15px 0 8px;color:#dbeafe}.help{font-size:12px;color:var(--muted);line-height:1.45;margin-top:6px}input,select{width:100%;border:1px solid rgba(148,163,184,.26);border-radius:16px;padding:13px 14px;background:rgba(2,6,23,.58);color:var(--text);outline:none;font-size:14px;transition:border-color .16s ease,box-shadow .16s ease,background .16s ease}input:focus,select:focus{border-color:rgba(56,189,248,.80);box-shadow:0 0 0 4px rgba(56,189,248,.12);background:rgba(15,23,42,.82)}.row{display:grid;grid-template-columns:1fr 1fr;gap:14px}.usageBox{padding:16px;border-radius:22px;background:rgba(2,6,23,.48);border:1px solid rgba(148,163,184,.16)}.usageHead{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:12px}.usageBig{font-size:28px;font-weight:950;letter-spacing:-.05em}.muted{color:var(--muted);font-size:13px}.bar{height:13px;border-radius:999px;background:rgba(148,163,184,.16);border:1px solid rgba(148,163,184,.12);overflow:hidden}.bar span{display:block;width:0;height:100%;border-radius:999px;background:linear-gradient(90deg,var(--blue),var(--violet),var(--pink));box-shadow:0 0 18px rgba(29,155,240,.30)}.miniGrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}.mini{padding:12px;border-radius:18px;background:rgba(15,23,42,.52);border:1px solid rgba(148,163,184,.15)}.mini b{display:block;font-size:13px}.mini span{display:block;margin-top:3px;color:var(--muted);font-size:12px}.btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}button{border:0;border-radius:999px;padding:12px 17px;font-weight:950;cursor:pointer;color:#fff;background:linear-gradient(135deg,var(--blue),var(--violet));box-shadow:0 16px 34px rgba(29,155,240,.18);transition:transform .16s ease,filter .16s ease,box-shadow .16s ease}button:hover{transform:translateY(-1px);filter:brightness(1.08);box-shadow:0 18px 40px rgba(139,92,246,.24)}button:active{transform:translateY(0) scale(.98)}button.secondary{background:rgba(148,163,184,.13);color:#dbeafe;border:1px solid rgba(148,163,184,.22);box-shadow:none}.status{margin-top:14px;color:#86efac;font-weight:900;min-height:22px}.callout{margin-top:14px;border:1px solid rgba(245,158,11,.22);background:rgba(245,158,11,.08);color:#fde68a;border-radius:20px;padding:14px;font-size:13px;line-height:1.55}.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.chip{font-size:12px;font-weight:800;color:#cbd5e1;border:1px solid rgba(148,163,184,.17);background:rgba(15,23,42,.42);border-radius:999px;padding:7px 10px}@media(max-width:860px){.hero{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.row{grid-template-columns:1fr}h1{font-size:28px}}
+    /* ============================================================
+       X Comment Generator — Options
+       Light, minimalist, modern. Inspired by Linear / Vercel / Notion.
+       Black-on-white, generous whitespace, sharp typography,
+       almost zero gradients, no glow. Confidence over flash.
+       ============================================================ */
+    :root {
+      color-scheme: light;
+      /* Surfaces */
+      --bg:           #fafafa;
+      --surface:      #ffffff;
+      --surface-2:    #f7f7f8;
+      --surface-3:    #f3f3f5;
+      /* Borders */
+      --border:       #ececec;
+      --border-2:     #e5e5e7;
+      --border-strong:#d4d4d8;
+      /* Text */
+      --text:         #0a0a0a;
+      --text-2:       #404040;
+      --text-3:       #737373;
+      --text-4:       #a3a3a3;
+      /* Accents */
+      --accent:       #0a0a0a;       /* primary action — black */
+      --accent-hover: #262626;
+      --link:         #1d4ed8;
+      --good:         #16a34a;
+      --warn:         #d97706;
+      --bad:          #dc2626;
+      /* Radii & shadows */
+      --r-sm: 6px;
+      --r-md: 8px;
+      --r-lg: 12px;
+      --r-xl: 16px;
+      --shadow-sm:  0 1px 2px rgba(0,0,0,0.04);
+      --shadow-md:  0 1px 3px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.03);
+      --shadow-lg:  0 4px 16px rgba(0,0,0,0.04), 0 1px 3px rgba(0,0,0,0.03);
+      font-feature-settings: "ss01", "cv11";
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      min-height: 100vh;
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      letter-spacing: -0.005em;
+      line-height: 1.5;
+    }
+    code, .mono { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace; }
+
+    /* ---------- Layout ---------- */
+    .app {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 40px 32px 80px;
+    }
+
+    /* Topbar */
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 40px;
+    }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .mark {
+      width: 36px; height: 36px;
+      border-radius: 8px;
+      overflow: hidden;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+    .mark img { width: 100%; height: 100%; display: block; }
+    .brand-meta h1 {
+      margin: 0;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+    .brand-meta p {
+      margin: 1px 0 0;
+      font-size: 12.5px;
+      color: var(--text-3);
+    }
+    .brand-meta a {
+      color: var(--text-2);
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid var(--border-2);
+    }
+    .brand-meta a:hover { color: var(--text); border-color: var(--text-3); }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: var(--surface);
+      border: 1px solid var(--border-2);
+      color: var(--text-2);
+      font-size: 12px;
+      font-weight: 500;
+    }
+    .badge .dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--good);
+    }
+
+    /* Hero */
+    .hero { margin-bottom: 36px; }
+    .hero h2 {
+      margin: 0;
+      font-size: 40px;
+      line-height: 1.05;
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      max-width: 22ch;
+    }
+    .hero p {
+      margin: 14px 0 0;
+      color: var(--text-3);
+      font-size: 15px;
+      max-width: 60ch;
+      line-height: 1.6;
+    }
+
+    /* Grid */
+    .grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+      gap: 20px;
+      align-items: start;
+    }
+    .stack { display: flex; flex-direction: column; gap: 20px; }
+
+    /* ---------- Card ---------- */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r-xl);
+      padding: 28px;
+      box-shadow: var(--shadow-sm);
+    }
+    .card-head { margin-bottom: 22px; }
+    .card-head h3 {
+      margin: 0;
+      font-size: 17px;
+      font-weight: 600;
+      letter-spacing: -0.015em;
+      color: var(--text);
+    }
+    .card-head p {
+      margin: 4px 0 0;
+      font-size: 13px;
+      color: var(--text-3);
+    }
+
+    /* ---------- Forms ---------- */
+    .field { display: flex; flex-direction: column; gap: 8px; }
+    .field + .field { margin-top: 18px; }
+    .field label {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text);
+    }
+    .field .hint {
+      font-size: 12.5px;
+      color: var(--text-3);
+      line-height: 1.5;
+    }
+    .field-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 18px;
+    }
+    input[type="text"], input[type="password"], input[type="number"], select, textarea {
+      width: 100%;
+      background: var(--surface);
+      color: var(--text);
+      border: 1px solid var(--border-2);
+      border-radius: var(--r-md);
+      padding: 10px 12px;
+      font-size: 13.5px;
+      font-family: inherit;
+      outline: none;
+      transition: border-color .15s ease, box-shadow .15s ease;
+    }
+    input::placeholder, textarea::placeholder { color: var(--text-4); }
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--text);
+      box-shadow: 0 0 0 3px rgba(10, 10, 10, 0.05);
+    }
+    input[type="password"] { font-family: "JetBrains Mono", ui-monospace, monospace; letter-spacing: 0.05em; }
+    select {
+      appearance: none;
+      cursor: pointer;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'><path fill='%23737373' d='M5 6 0 0h10z'/></svg>");
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+      padding-right: 32px;
+    }
+    textarea {
+      resize: vertical;
+      min-height: 130px;
+      line-height: 1.6;
+      font-size: 13.5px;
+    }
+
+    /* Tone presets */
+    .chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 12px;
+    }
+    .chip {
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 12.5px;
+      font-weight: 500;
+      padding: 6px 11px;
+      border-radius: 999px;
+      border: 1px solid var(--border-2);
+      background: var(--surface);
+      color: var(--text-2);
+      transition: all .12s ease;
+    }
+    .chip:hover { border-color: var(--text); color: var(--text); background: var(--surface-2); }
+    .chip[data-tone=""] { color: var(--text-3); }
+    .chip[data-tone=""]:hover { color: var(--bad); border-color: var(--bad); }
+
+    .tone-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 10px;
+      font-size: 12px;
+      color: var(--text-3);
+    }
+    .tone-meta .count.warn { color: var(--warn); font-weight: 500; }
+
+    /* ---------- Segmented toggle (output mode) ---------- */
+    .segmented {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4px;
+      padding: 4px;
+      background: var(--surface-2);
+      border: 1px solid var(--border-2);
+      border-radius: 10px;
+    }
+    .segmented input { display: none; }
+    .segmented label {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 9px 12px;
+      border-radius: 7px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-3);
+      background: transparent;
+      transition: background .14s ease, color .14s ease, box-shadow .14s ease;
+      user-select: none;
+    }
+    .segmented label:hover { color: var(--text-2); }
+    .segmented input:checked + label {
+      background: var(--surface);
+      color: var(--text);
+      box-shadow: 0 1px 2px rgba(0,0,0,0.05), 0 1px 1px rgba(0,0,0,0.03);
+    }
+    .segmented label svg {
+      width: 14px; height: 14px;
+      flex-shrink: 0;
+      color: currentColor;
+    }
+    .segmented label .seg-sub {
+      font-size: 11px;
+      font-weight: 400;
+      color: var(--text-4);
+      margin-left: 2px;
+    }
+    .segmented input:checked + label .seg-sub { color: var(--text-3); }
+
+    /* ---------- Buttons ---------- */
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 28px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      align-items: center;
+    }
+    .btn {
+      appearance: none;
+      cursor: pointer;
+      font-family: inherit;
+      font-weight: 500;
+      font-size: 13px;
+      padding: 9px 14px;
+      border-radius: var(--r-md);
+      border: 1px solid transparent;
+      transition: all .12s ease;
+      white-space: nowrap;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+    }
+    .btn-primary:hover { background: var(--accent-hover); border-color: var(--accent-hover); }
+    .btn-primary:active { transform: translateY(1px); }
+    .btn-ghost {
+      background: var(--surface);
+      color: var(--text-2);
+      border-color: var(--border-2);
+    }
+    .btn-ghost:hover { color: var(--text); border-color: var(--text-3); background: var(--surface-2); }
+    .btn-danger {
+      background: var(--surface);
+      color: var(--bad);
+      border-color: var(--border-2);
+    }
+    .btn-danger:hover { background: #fef2f2; border-color: var(--bad); }
+
+    .status {
+      margin-left: auto;
+      font-size: 12.5px;
+      font-weight: 500;
+      color: var(--good);
+      min-height: 18px;
+    }
+    .status.is-error { color: var(--bad); }
+
+    /* ---------- Sidebar: usage ---------- */
+    .stat-block { margin-top: 4px; }
+    .stat-num {
+      font-size: 36px;
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      line-height: 1;
+      color: var(--text);
+      font-variant-numeric: tabular-nums;
+    }
+    .stat-num small {
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--text-3);
+      letter-spacing: -0.01em;
+    }
+    .stat-row {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .stat-meta {
+      font-size: 12.5px;
+      color: var(--text-3);
+      text-align: right;
+    }
+
+    .progress {
+      margin-top: 14px;
+      height: 4px;
+      border-radius: 999px;
+      background: var(--surface-3);
+      overflow: hidden;
+    }
+    .progress > span {
+      display: block;
+      height: 100%;
+      width: 0%;
+      background: var(--accent);
+      border-radius: 999px;
+      transition: width .25s ease;
+    }
+    .progress.warn > span { background: var(--warn); }
+    .progress.bad > span  { background: var(--bad); }
+
+    .kv-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      margin-top: 24px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: var(--r-md);
+      overflow: hidden;
+    }
+    .kv {
+      padding: 14px 16px;
+      background: var(--surface);
+    }
+    .kv .k {
+      font-size: 11.5px;
+      color: var(--text-3);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .kv .v {
+      margin-top: 4px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    /* Token panel */
+    .panel-divider {
+      height: 1px;
+      background: var(--border);
+      margin: 24px -28px;
+    }
+    .section-label {
+      font-size: 11.5px;
+      color: var(--text-3);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 12px;
+    }
+    .tok-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    .tok-cell {
+      padding: 0;
+    }
+    .tok-cell .k {
+      font-size: 12px;
+      color: var(--text-3);
+      font-weight: 500;
+    }
+    .tok-cell .v {
+      margin-top: 6px;
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      color: var(--text);
+      font-variant-numeric: tabular-nums;
+    }
+    .tok-cell .v small {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text-4);
+      margin-left: 4px;
+    }
+
+    /* Diagnostic block (hidden until expanded) */
+    .diag {
+      margin-top: 20px;
+      padding-top: 18px;
+      border-top: 1px dashed var(--border);
+    }
+    .diag-toggle {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text-3);
+      user-select: none;
+    }
+    .diag-toggle:hover { color: var(--text); }
+    .diag-toggle::before {
+      content: "›";
+      display: inline-block;
+      transition: transform .15s ease;
+      font-size: 14px;
+      line-height: 1;
+    }
+    .diag.open .diag-toggle::before { transform: rotate(90deg); }
+    .diag-body { display: none; margin-top: 14px; }
+    .diag.open .diag-body { display: block; }
+    .diag-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      padding: 8px 0;
+      font-size: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+    .diag-row:last-child { border-bottom: 0; }
+    .diag-row .k { color: var(--text-3); }
+    .diag-row .v { font-family: "JetBrains Mono", monospace; color: var(--text); font-size: 11.5px; }
+    .diag-row .v.muted { color: var(--text-3); }
+    .diag-row .v.good { color: var(--good); }
+    .diag-row .v.warn { color: var(--warn); }
+    .diag-actions {
+      display: flex;
+      gap: 8px;
+      margin-top: 14px;
+    }
+    .diag-actions .btn {
+      font-size: 12px;
+      padding: 7px 11px;
+    }
+
+    /* Callout */
+    .callout {
+      margin-top: 20px;
+      padding: 14px 16px;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: var(--r-md);
+      font-size: 12.5px;
+      color: var(--text-2);
+      line-height: 1.6;
+    }
+    .callout b { color: var(--text); font-weight: 600; }
+
+    /* Inline tag */
+    .tag {
+      display: inline-block;
+      padding: 2px 7px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 500;
+      background: var(--surface-3);
+      color: var(--text-2);
+      vertical-align: middle;
+    }
+    .tag.good { background: #ecfdf5; color: #065f46; }
+    .tag.warn { background: #fffbeb; color: #92400e; }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .app { padding: 24px 20px 60px; }
+      .grid { grid-template-columns: 1fr; }
+      .hero h2 { font-size: 30px; }
+      .field-row { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <header class="hero">
+  <div class="app">
+    <!-- Topbar -->
+    <header class="topbar">
       <div class="brand">
-        <div class="logo">X</div>
-        <div>
-          <h1>X Comment Generator 2.0</h1>
-          <div class="sub">A product of Unique Labs · by Shahriar Ahmed · <a href="https://x.com/0x_nation" target="_blank">Website</a></div>
+        <div class="mark"><img src="icons/icon48.png" alt="X Comment Generator" width="36" height="36" style="display:block;border-radius:8px"/></div>
+        <div class="brand-meta">
+          <h1>Comment Generator <span style="color:var(--text-4); font-weight:500;">2.4</span></h1>
+          <p>Unique Labs · by <a href="https://x.com/0x_nation" target="_blank">Shahriar Ahmed</a></p>
         </div>
       </div>
-      <div class="pill"><span class="dot"></span>Draft-only, never auto-posts</div>
+      <div class="badge"><span class="dot"></span> Draft-only mode</div>
     </header>
 
+    <!-- Hero -->
+    <section class="hero">
+      <h2>A quieter way to write replies on X.</h2>
+      <p>Configure your OpenAI key, define a custom voice, and keep an eye on what you spend. Everything stays local in your browser. Drafts only — never auto-posted.</p>
+    </section>
+
     <main class="grid">
-      <section class="card">
-        <h2><span class="icon">⚙️</span>Generator Settings</h2>
-        <label for="apiKey">OpenAI API Key</label>
-        <input id="apiKey" type="password" placeholder="sk-..." autocomplete="off" />
-        <div class="help">Stored locally in Chrome extension storage.</div>
+      <!-- LEFT COLUMN -->
+      <div class="stack">
 
-        <div class="row">
-          <div>
-            <label for="modelPreset">Model Selection</label>
-            <select id="modelPreset">
-              <option value="gpt-4o">gpt-4o — default</option>
-              <option value="gpt-4o-mini">gpt-4o-mini — cheaper</option>
-              <option value="gpt-4.1-mini">gpt-4.1-mini</option>
-              <option value="gpt-4.1">gpt-4.1</option>
-              <option value="custom">Custom model name</option>
-            </select>
+        <!-- API & Model -->
+        <section class="card">
+          <div class="card-head">
+            <h3>API &amp; Model</h3>
+            <p>Stored locally in extension storage. Used only for direct calls to <code>api.openai.com</code>.</p>
           </div>
-          <div>
-            <label for="model">Custom / Active Model</label>
-            <input id="model" type="text" placeholder="gpt-4o" />
-          </div>
-        </div>
 
-        <div class="row">
-          <div>
-            <label for="temperature">Temperature</label>
-            <input id="temperature" type="number" step="0.01" min="0" max="1.5" placeholder="1.18" />
+          <div class="field">
+            <label for="apiKey">OpenAI API key</label>
+            <input id="apiKey" type="password" placeholder="sk-..." autocomplete="off" spellcheck="false" />
           </div>
-          <div>
-            <label for="maxTokens">Max Tokens</label>
-            <input id="maxTokens" type="number" min="40" max="240" placeholder="135" />
-          </div>
-        </div>
 
-        <h2 style="margin-top:24px"><span class="icon">🛡️</span>API Safety Controls</h2>
-        <div class="row">
-          <div>
-            <label for="dailyLimit">Daily API Request Limit</label>
-            <input id="dailyLimit" type="number" min="1" max="1000" placeholder="60" />
-          </div>
-          <div>
-            <label for="cooldownSeconds">Cooldown Between Requests</label>
-            <input id="cooldownSeconds" type="number" min="0" max="120" placeholder="5" />
-          </div>
-        </div>
-
-        <div class="btns">
-          <button id="save">Save Settings</button>
-          <button id="clear" class="secondary">Clear Reply Memory</button>
-          <button id="resetUsage" class="secondary">Reset Today’s Counter</button>
-        </div>
-        <div id="status" class="status"></div>
-      </section>
-
-      <aside class="card">
-        <h2><span class="icon">📊</span>Today’s Usage</h2>
-        <div class="usageBox">
-          <div class="usageHead">
-            <div>
-              <div class="muted">API requests</div>
-              <div class="usageBig" id="usageBig">0/60</div>
+          <div class="field-row">
+            <div class="field">
+              <label for="modelPreset">Model preset</label>
+              <select id="modelPreset">
+                <option value="gpt-4o">gpt-4o · balanced default</option>
+                <option value="gpt-4o-mini">gpt-4o-mini · cheaper</option>
+                <option value="gpt-4.1">gpt-4.1</option>
+                <option value="gpt-4.1-mini">gpt-4.1-mini</option>
+                <option value="gpt-4.1-nano">gpt-4.1-nano · cheapest</option>
+                <option value="custom">Custom…</option>
+              </select>
             </div>
-            <div class="muted" id="usageDate">Today</div>
+            <div class="field">
+              <label for="model">Active model</label>
+              <input id="model" type="text" placeholder="gpt-4o" spellcheck="false" />
+            </div>
           </div>
-          <div class="bar"><span id="usageBar"></span></div>
-          <div class="miniGrid">
-            <div class="mini"><b id="leftCount">60 left</b><span>Remaining limit</span></div>
-            <div class="mini"><b id="activeModel">gpt-4o</b><span>Active model</span></div>
-            <div class="mini"><b id="cooldownView">5s</b><span>Cooldown</span></div>
-            <div class="mini"><b id="keyView">Not set</b><span>API key</span></div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="temperature">Temperature <span style="color:var(--text-4);font-weight:400;">· 0–1.5</span></label>
+              <input id="temperature" type="number" step="0.01" min="0" max="1.5" placeholder="0.95" />
+              <div class="hint">Above 1.1 increases the chance of mixed-language gibberish. 0.85–1.0 is the sweet spot.</div>
+            </div>
+            <div class="field">
+              <label for="maxTokens">Max output tokens <span style="color:var(--text-4);font-weight:400;">· 40–240</span></label>
+              <input id="maxTokens" type="number" min="40" max="240" placeholder="135" />
+            </div>
           </div>
-        </div>
-        <div class="callout">Tip: keep the daily limit low while testing. The extension may retry once to avoid repetitive or weak replies, so one click can occasionally use two requests.</div>
-        <div class="chips">
-          <span class="chip">Human-style replies</span><span class="chip">Question mode</span><span class="chip">X tab memory clear</span><span class="chip">Clipboard fallback</span>
-        </div>
-        <div class="help" style="margin-top:18px">Usage: open X, press <b>AI Reply</b> or <b>Question</b>. It inserts a draft only. Review before posting.</div>
+        </section>
+
+        <!-- Custom Tone -->
+        <section class="card">
+          <div class="card-head">
+            <h3>Custom voice</h3>
+            <p>Optional. Describe the persona you want replies to sound like. Leave empty for the default human-style tone.</p>
+          </div>
+
+          <div class="field">
+            <label for="customTone">Persona instructions</label>
+            <textarea
+              id="customTone"
+              maxlength="1500"
+              placeholder="e.g. Reply like a skeptical crypto trader. Short, sharp, focused on fees and execution. No hype words."
+            ></textarea>
+            <div class="tone-meta">
+              <span>Plain English. The model treats this as your voice.</span>
+              <span class="count" id="toneCount">0 / 1500</span>
+            </div>
+            <div class="chip-row" id="tonePresets">
+              <button type="button" class="chip" data-tone="Reply like a skeptical crypto trader. Short, sharp, focused on fees, speed, and real adoption. No hype words.">Skeptical trader</button>
+              <button type="button" class="chip" data-tone="Founder voice: opinionated, blunt, slightly dry. One real point per reply, no fluff, no praise.">Blunt founder</button>
+              <button type="button" class="chip" data-tone="Friendly developer. Casual but precise. Often asks one specific technical question or notes a real edge case.">Dev mode</button>
+              <button type="button" class="chip" data-tone="Witty, slightly sarcastic, never mean. Quick punchy reactions, light humor, no emojis unless the tweet has them.">Witty</button>
+              <button type="button" class="chip" data-tone="Calm and analytical. Cite one concrete detail from the tweet and add a small grounded observation.">Analytical</button>
+              <button type="button" class="chip" data-tone="Supportive but realistic. Acknowledge effort, then add one practical concern or small suggestion.">Supportive realist</button>
+              <button type="button" class="chip" data-tone="">Clear</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- Output mode -->
+        <section class="card">
+          <div class="card-head">
+            <h3>Where the reply lands</h3>
+            <p>Choose whether the generated reply is dropped into X's reply box or copied to your clipboard.</p>
+          </div>
+
+          <div class="segmented" role="radiogroup" aria-label="Output mode">
+            <input type="radio" name="outputMode" id="outputInsert" value="insert" />
+            <label for="outputInsert">
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M3 8h10M9 4l4 4-4 4"/>
+              </svg>
+              Insert into reply box
+            </label>
+
+            <input type="radio" name="outputMode" id="outputClipboard" value="clipboard" />
+            <label for="outputClipboard">
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="4" y="3" width="8" height="11" rx="1.5"/>
+                <path d="M6 3V2h4v1"/>
+              </svg>
+              Copy to clipboard
+            </label>
+          </div>
+
+          <div class="hint" style="margin-top:10px;">
+            <b id="outputModeHint" style="color:var(--text-2);font-weight:500;">—</b>
+          </div>
+        </section>
+
+        <!-- Safety -->
+        <section class="card">
+          <div class="card-head">
+            <h3>API safety</h3>
+            <p>Hard caps that prevent runaway costs from accidental clicks.</p>
+          </div>
+
+          <div class="field-row" style="margin-top:0">
+            <div class="field">
+              <label for="dailyLimit">Daily request limit</label>
+              <input id="dailyLimit" type="number" min="1" max="1000" placeholder="60" />
+              <div class="hint">Hard cap on requests per calendar day.</div>
+            </div>
+            <div class="field">
+              <label for="cooldownSeconds">Cooldown between requests (seconds)</label>
+              <input id="cooldownSeconds" type="number" min="0" max="120" placeholder="5" />
+              <div class="hint">Avoids accidental double-clicks.</div>
+            </div>
+          </div>
+
+          <div class="actions">
+            <button id="save" class="btn btn-primary">Save settings</button>
+            <button id="clear" class="btn btn-ghost">Clear reply memory</button>
+            <button id="resetUsage" class="btn btn-ghost">Reset today's counter</button>
+            <div id="status" class="status"></div>
+          </div>
+        </section>
+      </div>
+
+      <!-- RIGHT COLUMN — USAGE -->
+      <aside class="stack">
+
+        <!-- Daily requests -->
+        <section class="card">
+          <div class="card-head">
+            <h3>Today's requests</h3>
+            <p id="dateText">—</p>
+          </div>
+
+          <div class="stat-block">
+            <div class="stat-row">
+              <div class="stat-num" id="usageBig">0 <small>/ 60</small></div>
+              <div class="stat-meta"><span id="leftCount">60 left</span></div>
+            </div>
+            <div class="progress" id="usageBarWrap"><span id="usageBar"></span></div>
+          </div>
+
+          <div class="kv-grid">
+            <div class="kv"><div class="k">Active model</div><div class="v" id="activeModel">—</div></div>
+            <div class="kv"><div class="k">Cooldown</div><div class="v" id="cooldownView">—</div></div>
+            <div class="kv"><div class="k">API key</div><div class="v" id="keyView">—</div></div>
+            <div class="kv"><div class="k">Voice</div><div class="v" id="toneStatus">—</div></div>
+          </div>
+        </section>
+
+        <!-- Token usage -->
+        <section class="card">
+          <div class="card-head">
+            <h3>Token usage</h3>
+            <p>Tracked from each OpenAI response. Cost is an estimate.</p>
+          </div>
+
+          <div class="section-label">Today</div>
+          <div class="tok-grid">
+            <div class="tok-cell"><div class="k">Input</div><div class="v" id="tokInToday">0 <small>tok</small></div></div>
+            <div class="tok-cell"><div class="k">Output</div><div class="v" id="tokOutToday">0 <small>tok</small></div></div>
+            <div class="tok-cell"><div class="k">Total</div><div class="v" id="tokTotalToday">0 <small>tok</small></div></div>
+            <div class="tok-cell"><div class="k">Estimated cost</div><div class="v" id="costToday">$0.00</div></div>
+          </div>
+
+          <div class="panel-divider"></div>
+
+          <div class="section-label">Lifetime</div>
+          <div class="tok-grid">
+            <div class="tok-cell"><div class="k">Input</div><div class="v" id="tokInTotal">0 <small>tok</small></div></div>
+            <div class="tok-cell"><div class="k">Output</div><div class="v" id="tokOutTotal">0 <small>tok</small></div></div>
+            <div class="tok-cell"><div class="k">Requests</div><div class="v" id="reqTotal">0</div></div>
+            <div class="tok-cell"><div class="k">Estimated cost</div><div class="v" id="costTotal">$0.00</div></div>
+          </div>
+
+          <!-- Diagnostics — collapsible -->
+          <div class="diag" id="diag">
+            <div class="diag-toggle" id="diagToggle">View diagnostics</div>
+            <div class="diag-body">
+              <div class="diag-row">
+                <span class="k">Last token source</span>
+                <span class="v" id="lastSource">—</span>
+              </div>
+              <div class="diag-row">
+                <span class="k">Last prompt tokens</span>
+                <span class="v" id="lastIn">—</span>
+              </div>
+              <div class="diag-row">
+                <span class="k">Last completion tokens</span>
+                <span class="v" id="lastOut">—</span>
+              </div>
+              <div class="diag-row">
+                <span class="k">Last request time</span>
+                <span class="v" id="lastWhen">—</span>
+              </div>
+              <div class="diag-actions">
+                <button id="testTracker" class="btn btn-ghost" type="button">Run tracker self-test</button>
+                <button id="resetTokens" class="btn btn-danger" type="button">Reset all stats</button>
+              </div>
+              <div class="callout" style="margin-top:14px;">
+                <b>Tracker self-test</b> increments tokens by a fixed amount (without calling OpenAI) so you can verify the tracking pipeline works end-to-end. If the numbers move, tracking is healthy. If a real reply doesn't move them, the issue is the OpenAI response — check the service worker console.
+              </div>
+            </div>
+          </div>
+        </section>
       </aside>
     </main>
   </div>
