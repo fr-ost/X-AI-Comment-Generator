@@ -3,47 +3,319 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
   <style>
-    :root{color-scheme:dark;--bg:#050816;--card:rgba(15,23,42,.72);--line:rgba(148,163,184,.22);--text:#eef6ff;--muted:#94a3b8;--blue:#1d9bf0;--violet:#8b5cf6;--pink:#ec4899;--green:#22c55e;--amber:#f59e0b}
-    *{box-sizing:border-box} body{width:356px;margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:radial-gradient(circle at 10% -10%,rgba(29,155,240,.42),transparent 34%),radial-gradient(circle at 98% 8%,rgba(139,92,246,.34),transparent 36%),linear-gradient(180deg,#07111f 0%,#030712 100%);color:var(--text);overflow:hidden}.shell{position:relative;padding:16px}.shell:before{content:"";position:absolute;inset:0;background:linear-gradient(120deg,transparent,rgba(255,255,255,.05),transparent);pointer-events:none}.hero{display:flex;align-items:center;gap:12px;margin-bottom:14px}.logo{width:46px;height:46px;border-radius:16px;background:linear-gradient(135deg,var(--blue),var(--violet),var(--pink));display:grid;place-items:center;font-weight:950;font-size:19px;box-shadow:0 16px 36px rgba(29,155,240,.25),inset 0 1px 0 rgba(255,255,255,.28)}h1{font-size:18px;margin:0;letter-spacing:-.03em}.tag{display:inline-flex;align-items:center;gap:5px;margin-top:5px;padding:4px 8px;border:1px solid rgba(34,197,94,.28);border-radius:999px;background:rgba(34,197,94,.10);color:#bbf7d0;font-size:11px;font-weight:800}.panel{border:1px solid var(--line);background:linear-gradient(180deg,rgba(15,23,42,.82),rgba(2,6,23,.74));box-shadow:0 18px 46px rgba(0,0,0,.28);backdrop-filter:blur(18px);border-radius:22px;padding:14px;margin:12px 0}.statTop{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:10px}.muted{color:var(--muted);font-size:12px;line-height:1.45}.model{max-width:175px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:13px;font-weight:900;color:#dbeafe}.ringWrap{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:center}.ring{width:62px;height:62px;border-radius:50%;display:grid;place-items:center;background:conic-gradient(var(--blue) calc(var(--p)*1%),rgba(148,163,184,.18) 0);box-shadow:0 0 24px rgba(29,155,240,.17)}.ring:after{content:attr(data-value);width:48px;height:48px;border-radius:50%;background:#07111f;display:grid;place-items:center;font-weight:950;font-size:13px}.bar{height:10px;border-radius:999px;background:rgba(148,163,184,.16);overflow:hidden;border:1px solid rgba(148,163,184,.13)}.bar span{display:block;height:100%;width:var(--p);border-radius:999px;background:linear-gradient(90deg,var(--blue),var(--violet),var(--pink));box-shadow:0 0 18px rgba(29,155,240,.35)}.usageLine{margin-top:7px;display:flex;justify-content:space-between;color:#cbd5e1;font-size:12px}.quick{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}.quickCard{border:1px solid rgba(148,163,184,.16);background:rgba(15,23,42,.58);border-radius:16px;padding:10px}.quickCard b{display:block;font-size:12px}.quickCard span{display:block;margin-top:3px;color:var(--muted);font-size:11px}button{width:100%;border:0;border-radius:999px;padding:11px 12px;font-weight:900;cursor:pointer;color:#fff;background:linear-gradient(135deg,var(--blue),var(--violet));box-shadow:0 12px 26px rgba(29,155,240,.22);transition:transform .16s ease,filter .16s ease,box-shadow .16s ease}button:hover{transform:translateY(-1px);filter:brightness(1.08);box-shadow:0 16px 34px rgba(139,92,246,.28)}button:active{transform:translateY(0) scale(.98)}button.secondary{background:rgba(148,163,184,.13);color:#dbeafe;border:1px solid rgba(148,163,184,.22);box-shadow:none}.actions{display:grid;gap:8px;margin-top:12px}.footer{display:flex;justify-content:space-between;align-items:center;margin-top:12px;color:var(--muted);font-size:11px}.dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 12px var(--green);display:inline-block;margin-right:6px}
+    :root {
+      color-scheme: light;
+      --bg:           #ffffff;
+      --surface-2:    #fafafa;
+      --surface-3:    #f5f5f5;
+      --border:       #ececec;
+      --border-2:     #e5e5e7;
+      --text:         #0a0a0a;
+      --text-2:       #404040;
+      --text-3:       #737373;
+      --text-4:       #a3a3a3;
+      --accent:       #0a0a0a;
+      --accent-hover: #262626;
+      --good:         #16a34a;
+      --warn:         #d97706;
+      --bad:          #dc2626;
+    }
+    * { box-sizing: border-box; }
+    body {
+      width: 340px;
+      margin: 0;
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      -webkit-font-smoothing: antialiased;
+      letter-spacing: -0.005em;
+    }
+    .wrap { padding: 16px; }
+
+    /* Header */
+    .head {
+      display: flex; align-items: center; gap: 10px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 14px;
+    }
+    .mark {
+      width: 30px; height: 30px;
+      border-radius: 7px;
+      overflow: hidden;
+      display: grid; place-items: center;
+      flex-shrink: 0;
+    }
+    .mark img { width: 100%; height: 100%; display: block; }
+    .head-meta { flex: 1; min-width: 0; }
+    .head-meta h1 {
+      margin: 0;
+      font-size: 13.5px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    }
+    .head-meta p {
+      margin: 1px 0 0;
+      font-size: 11.5px;
+      color: var(--text-3);
+      font-family: "JetBrains Mono", monospace;
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    }
+    .pill {
+      display: inline-flex; align-items: center; gap: 5px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: var(--surface-2);
+      border: 1px solid var(--border-2);
+      color: var(--text-2);
+      font-size: 10.5px;
+      font-weight: 500;
+    }
+    .pill .dot {
+      width: 5px; height: 5px; border-radius: 50%;
+      background: var(--good);
+    }
+
+    /* Section */
+    .section { margin-bottom: 16px; }
+    .section-title {
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--text-3);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .section-title .meta {
+      font-size: 10.5px;
+      color: var(--text-4);
+      letter-spacing: 0;
+      text-transform: none;
+      font-weight: 400;
+      font-family: "JetBrains Mono", monospace;
+    }
+
+    /* Stat row */
+    .stat-row {
+      display: flex; align-items: end; justify-content: space-between;
+      gap: 10px; margin-bottom: 10px;
+    }
+    .stat-num {
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      line-height: 1;
+      font-variant-numeric: tabular-nums;
+    }
+    .stat-num small {
+      font-size: 13px; font-weight: 500; color: var(--text-3);
+      letter-spacing: -0.01em;
+    }
+    .stat-meta {
+      font-size: 11.5px; color: var(--text-3);
+      font-variant-numeric: tabular-nums;
+    }
+    .stat-meta b { color: var(--text); font-weight: 600; }
+
+    /* Progress */
+    .progress {
+      height: 3px;
+      border-radius: 999px;
+      background: var(--surface-3);
+      overflow: hidden;
+    }
+    .progress > span {
+      display: block; height: 100%; width: 0%;
+      background: var(--accent);
+      border-radius: 999px;
+      transition: width .25s ease;
+    }
+    .progress.warn > span { background: var(--warn); }
+    .progress.bad > span  { background: var(--bad); }
+
+    /* KV grid */
+    .kv-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      margin-top: 12px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .kv {
+      padding: 9px 11px;
+      background: var(--bg);
+    }
+    .kv .k {
+      font-size: 10px; font-weight: 500;
+      color: var(--text-3);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .kv .v {
+      margin-top: 2px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text);
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    }
+
+    /* Token row */
+    .tok-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 8px;
+    }
+    .tok-cell {
+      padding: 10px 11px;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      text-align: left;
+    }
+    .tok-cell .k {
+      font-size: 10px; font-weight: 500;
+      color: var(--text-3);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .tok-cell .v {
+      margin-top: 4px;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .cost {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 12px;
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      background: var(--surface-2);
+      border-radius: 8px;
+      font-size: 12px;
+    }
+    .cost .row {
+      display: flex; justify-content: space-between; width: 100%;
+    }
+    .cost .row + .row { margin-top: 4px; }
+    .cost .label { color: var(--text-3); }
+    .cost .val { color: var(--text); font-weight: 600; font-variant-numeric: tabular-nums; }
+
+    /* Buttons */
+    .actions { display: grid; gap: 7px; margin-top: 4px; }
+    .btn {
+      width: 100%;
+      cursor: pointer;
+      font-family: inherit;
+      font-weight: 500;
+      font-size: 12.5px;
+      padding: 9px 12px;
+      border-radius: 8px;
+      border: 1px solid transparent;
+      transition: all .12s ease;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+    }
+    .btn-primary:hover { background: var(--accent-hover); border-color: var(--accent-hover); }
+    .btn-ghost {
+      background: var(--bg);
+      color: var(--text-2);
+      border-color: var(--border-2);
+    }
+    .btn-ghost:hover { color: var(--text); border-color: var(--text-3); background: var(--surface-2); }
+
+    .footer {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 1px solid var(--border);
+      font-size: 10.5px;
+      color: var(--text-3);
+    }
+    .voice {
+      padding: 2px 7px;
+      border-radius: 4px;
+      background: var(--surface-3);
+      font-size: 10px;
+      font-weight: 500;
+      color: var(--text-2);
+    }
+    .voice.custom { background: #f0f9ff; color: #075985; }
+    .voice.clipboard { background: #fef3c7; color: #92400e; }
   </style>
 </head>
 <body>
-  <main class="shell">
-    <section class="hero">
-      <div class="logo">X</div>
-      <div>
-        <h1>X Comment Generator</h1>
-        <div class="tag"><span class="dot"></span>Draft-only mode</div>
+  <main class="wrap">
+    <header class="head">
+      <div class="mark"><img src="icons/icon48.png" alt="X Comment Generator" width="30" height="30"/></div>
+      <div class="head-meta">
+        <h1>Comment Generator</h1>
+        <p id="modelLine">—</p>
+      </div>
+      <span class="pill"><span class="dot"></span> Draft</span>
+    </header>
+
+    <!-- Daily requests -->
+    <section class="section">
+      <div class="section-title">
+        <span>Today's requests</span>
+        <span class="meta" id="dateText">—</span>
+      </div>
+
+      <div class="stat-row">
+        <div class="stat-num" id="usageBig">0 <small>/ 60</small></div>
+        <div class="stat-meta"><b id="leftText">60</b> left</div>
+      </div>
+      <div class="progress" id="usageBarWrap"><span id="barFill"></span></div>
+
+      <div class="kv-grid">
+        <div class="kv"><div class="k">Cooldown</div><div class="v" id="cooldownText">—</div></div>
+        <div class="kv"><div class="k">API key</div><div class="v" id="apiText">—</div></div>
       </div>
     </section>
 
-    <section class="panel">
-      <div class="statTop">
-        <div>
-          <div class="muted">Active model</div>
-          <div class="model" id="modelName">Loading...</div>
-        </div>
-        <div class="muted" id="dateText"></div>
+    <!-- Token usage -->
+    <section class="section">
+      <div class="section-title"><span>Token usage</span><span class="meta">today</span></div>
+      <div class="tok-row">
+        <div class="tok-cell"><div class="k">In</div><div class="v" id="tokIn">0</div></div>
+        <div class="tok-cell"><div class="k">Out</div><div class="v" id="tokOut">0</div></div>
+        <div class="tok-cell"><div class="k">Total</div><div class="v" id="tokTotal">0</div></div>
       </div>
-      <div class="ringWrap">
-        <div class="ring" id="ring" style="--p:0" data-value="0%"></div>
-        <div>
-          <div class="bar" style="--p:0%"><span id="barFill"></span></div>
-          <div class="usageLine"><span id="usageText">0/0 requests</span><span id="leftText">0 left</span></div>
+      <div class="cost">
+        <div style="width:100%;">
+          <div class="row"><span class="label">Today</span><span class="val" id="costToday">$0.00</span></div>
+          <div class="row"><span class="label">Lifetime</span><span class="val" id="costLifetime">$0.00</span></div>
         </div>
-      </div>
-      <div class="quick">
-        <div class="quickCard"><b id="cooldownText">Cooldown</b><span>Between clicks</span></div>
-        <div class="quickCard"><b id="apiText">API key</b><span>Status</span></div>
       </div>
     </section>
 
+    <!-- Actions -->
     <div class="actions">
-      <button id="options">Open Settings</button>
-      <button id="reset" class="secondary">Reset Today’s Counter</button>
+      <button id="options" class="btn btn-primary">Open settings</button>
+      <button id="reset" class="btn btn-ghost">Reset today's counter</button>
     </div>
-    <div class="footer"><span>Unique Labs</span><span>Review before posting</span></div>
+
+    <div class="footer">
+      <span>Voice: <span id="tonePill" class="voice">Default</span></span>
+      <span>Output: <span id="modePill" class="voice">Insert</span></span>
+    </div>
   </main>
   <script src="popup.js"></script>
 </body>
